@@ -6,15 +6,15 @@ import org.junit.Test
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow
 import static org.junit.jupiter.api.Assertions.assertEquals
 
-class Task08Test {
+class Task09Test {
     @Test
     void testImplemented() {
         assertDoesNotThrow(() -> {
-            Task08.parseAndFilterJson("{}")
+            Task09.exec("ls")
         } as ThrowingSupplier)
         assertEquals(
-            Task08.parseAndFilterJson("{\"Kate\":18,\"Alan\":16,\"Osvald\":27}"),
-            "{\"Kate\":18,\"Osvald\":27}"
+            Task09.exec("hostname -i"),
+            "hostname -i".execute().text.trim()
         )
     }
 }
