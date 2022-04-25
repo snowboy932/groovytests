@@ -6,15 +6,14 @@ import org.junit.Test
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow
 import static org.junit.jupiter.api.Assertions.assertEquals
 
-class Task06Test {
+class Task07Test {
     @Test
     void testImplemented() {
         assertDoesNotThrow(() -> {
-            Task06.adults([:])
+            Task07.encryptThis("hi")
         } as ThrowingSupplier)
-        assertEquals(
-            Task06.adults([Kate: 24, Alan: 16, Osvald: 18]),
-            [Kate: 24, Osvald: 18]
-        )
+        assertEquals(Task07.encryptThis("Hello"), "72olle")
+        assertEquals(Task07.encryptThis("good"), "103doo")
+        assertEquals(Task07.encryptThis("hello world"), "104olle 119drlo")
     }
 }
