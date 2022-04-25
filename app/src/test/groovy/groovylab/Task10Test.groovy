@@ -6,15 +6,15 @@ import org.junit.Test
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow
 import static org.junit.jupiter.api.Assertions.assertEquals
 
-class Task09Test {
+class Task10Test {
     @Test
     void testImplemented() {
         assertDoesNotThrow(() -> {
-            Task09.exec("ls")
+            Task10.urlText("https://google.com")
         } as ThrowingSupplier)
         assertEquals(
-            Task09.exec("hostname -i"),
-            "hostname -i".execute().text.trim()
+            Task10.urlText("http://api.ipify.org/"),
+            new URL("http://api.ipify.org/").text
         )
     }
 }
